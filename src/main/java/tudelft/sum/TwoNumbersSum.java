@@ -12,8 +12,9 @@ class TwoNumbersSum {
 
         int complement = 0;
         ArrayList<Integer> result = new ArrayList<>();
+        int maxSize = Math.max(first.size(), second.size());
 
-        for(int i = 0; i < Math.max(first.size(), second.size()); i++){
+        for(int i = 0; i < maxSize; i++){
             int firstVal = i < first.size() ? first.get(i) : 0;
             int secondVal = i < second.size() ? second.get(i) : 0;
             int total = firstVal + secondVal + complement;
@@ -24,6 +25,9 @@ class TwoNumbersSum {
             }
             result.add(i, total);
         }
+
+        if(complement > 0)
+            result.add(maxSize , complement);
 
         Collections.reverse(result);
         return result;

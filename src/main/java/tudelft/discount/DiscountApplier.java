@@ -18,6 +18,5 @@ public class DiscountApplier {
                 product.setPrice(product.getPrice() * 1.1);
             }
         }
-
     }
 }
